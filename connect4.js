@@ -5,10 +5,7 @@
  * board fills (tie)
  */
 
-/* Mason added Material */
-document.addEventListener("DOMContentLoaded", () => {
-  const showCurrPlayer = document.querySelector(".curr-player");
-});
+
 
 let currPlayer = 1; // active player: 1 or 2
 
@@ -52,7 +49,7 @@ function makeHtmlBoard() {
   // creates DOM nodes that iterates through WIDTH value
   for (let x = 0; x < WIDTH; x++) {
     const headCell = document.createElement("td");
-    headCell.setAttribute("id", x);
+    headCell.id = x;
     top.append(headCell);
   }
   htmlBoard.append(top);
@@ -66,7 +63,7 @@ function makeHtmlBoard() {
     for (let x = 0; x < WIDTH; x++) {
       const cell = document.createElement("td");
       // creates an id attribute for each column/row value
-      cell.setAttribute("id", `${y}-${x}`);
+      cell.id = `${y}-${x}`;
       //attaches cell to row
       row.append(cell);
     }
@@ -79,7 +76,7 @@ function makeHtmlBoard() {
 
 function findSpotForCol(x) {
   // TODO: write the real version of this, rather than always returning 0
-  // i is/are the rows on the board
+  // y is/are the rows on the board
   for (let y = board.length - 1; y >= 0; y--) {
     if (!board[y][x]) {
       return y;
@@ -105,7 +102,7 @@ function placeInTable(y, x) {
 
 /** endGame: announce game end */
 
-function endGame(msg) {
+function endGame() {
   // TODO: pop up alert message
   alert(`Player ${currPlayer} won the game! Try again?`);
 }
@@ -115,6 +112,7 @@ function switchPlayer() {
   let soonToBeCurrPlayer = currPlayer === 1 ? 2 : 1;
   let playerText = document.querySelector(".curr-player");
   playerText.querySelector(".curr-player-number").textContent =
+    //this employs one of the players 1 or 2
     soonToBeCurrPlayer;
   playerText.classList.remove(`player-1`);
   playerText.classList.remove(`player-2`);
