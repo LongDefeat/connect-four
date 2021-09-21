@@ -116,6 +116,7 @@ function switchPlayer() {
     soonToBeCurrPlayer;
   playerText.classList.remove(`player-1`);
   playerText.classList.remove(`player-2`);
+    // allows for 1 or 2 to be switched in the player turn box
   playerText.classList.add(`player-${soonToBeCurrPlayer}`);
   currPlayer = soonToBeCurrPlayer;
 }
