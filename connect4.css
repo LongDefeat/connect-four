@@ -5,7 +5,7 @@
 }
 
 #player-box {
-  border: solid rgb(77, 76, 85);
+  border: solid #333;
   display: inline-block;
 }
 
