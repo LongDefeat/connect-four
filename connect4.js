@@ -43,7 +43,8 @@ function makeHtmlBoard() {
   // TODO: add comment for this code
   // top is the top row where players will select which column they wish to place their piece
   const top = document.createElement("tr");
-  top.setAttribute("id", "column-top");
+  // top.setAttribute("id", "column-top");
+  top.id = "column-top";
   top.addEventListener("click", handleClick);
 
   // creates DOM nodes that iterates through WIDTH value
