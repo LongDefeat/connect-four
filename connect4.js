@@ -5,8 +5,6 @@
  * board fills (tie)
  */
 
-
-
 let currPlayer = 1; // active player: 1 or 2
 
 const WIDTH = 7;
@@ -20,16 +18,7 @@ let board = []; // array of rows, each row is array of cells  (board[y][x])
 
 function makeBoard() {
   // TODO: set "board" to empty HEIGHT x WIDTH matrix array
-  // let initBoard = [];
-  // for (let i = 0; i < HEIGHT; i++) {
-  //   let row = [];
-  //   for (let j = 0; j < WIDTH; j++) {
-  //     row.push(`${i}-${j}`);
-  //   }
-  //   // i represents the row and j the column
-  //   initBoard.push(row);
-  // }
-  // board = initBoard;
+
   for (let y = 0; y < HEIGHT; y++) {
     board.push(Array.from({ length: WIDTH }));
   }
@@ -38,7 +27,7 @@ function makeBoard() {
 
 function makeHtmlBoard() {
   // TODO: get "htmlBoard" variable from the item in HTML w/ID of "board"
-  let htmlBoard = document.querySelector("#board");
+  const htmlBoard = document.querySelector("#board");
 
   // TODO: add comment for this code
   // top is the top row where players will select which column they wish to place their piece
@@ -52,6 +41,9 @@ function makeHtmlBoard() {
     const headCell = document.createElement("td");
     headCell.id = x;
     top.append(headCell);
+
+    // const newCell = `<td id="${x}"></td>`
+    // cells += newCell
   }
   htmlBoard.append(top);
 
@@ -115,9 +107,10 @@ function switchPlayer() {
   playerText.querySelector(".curr-player-number").textContent =
     //this employs one of the players 1 or 2
     soonToBeCurrPlayer;
+  // allows for ability to remove 1 or 2 to player
   playerText.classList.remove(`player-1`);
   playerText.classList.remove(`player-2`);
-    // allows for 1 or 2 to be switched in the player turn box
+  // allows for 1 or 2 to be switched in the player turn box
   playerText.classList.add(`player-${soonToBeCurrPlayer}`);
   currPlayer = soonToBeCurrPlayer;
 }
