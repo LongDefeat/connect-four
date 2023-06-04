@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Connect 4</title>
-    <link href="connect4.css" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connect Four</title>
+    <link rel="stylesheet" href="connect4.css" />
   </head>
+
   <body>
-    <h1 id="title"><strong>Connect Four</strong></h1>
-    <h3 id="player-box">
-      It is
-      <span class="curr-player player-1"
-        >Player <span class="curr-player-number">1</span></span
-      >'s turn
-    </h3>
+    <h1 id="title" class="animated">Connect Four</h1>
+
+    <div id="player-box" class="animated">
+      <h3 class="curr-player player-1">
+        Current Player: <span class="curr-player-number">1</span>
+      </h3>
+    </div>
 
     <div id="game">
       <table id="board"></table>

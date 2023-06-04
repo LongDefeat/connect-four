@@ -68,6 +68,12 @@ body {
   color: blue;
 }
 
+.piece.win {
+  animation-name: win-animation;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
 /* column-top is table row of clickable areas for each column */
 
 #column-top td {
@@ -91,7 +97,7 @@ body {
 }
 
 /* Animation for winning game pieces */
-@keyframes winAnimation {
+@keyframes win-animation {
   0% {
     transform: scale(1);
   }
