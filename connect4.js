@@ -11,7 +11,8 @@ const WIDTH = 7;
 const HEIGHT = 6;
 
 let board = []; // array of rows, each row is array of cells  (board[y][x])
-
+let restartBtn = document.getElementById("restart-btn");
+restartBtn.addEventListener("click", restartGame);
 /** makeBoard: create in-JS board structure:
  *    board = array of rows, each row is array of cells  (board[y][x])
  */
@@ -88,6 +89,21 @@ function endGame() {
   // Disable further clicks on the board
   const htmlBoard = document.getElementById("board");
   htmlBoard.removeEventListener("click", handleClick);
+
+  restartBtn.classList.remove("hidden");
+}
+
+function restartGame() {
+  // Remove all the player pieces from the board
+  const cells = document.querySelectorAll("#board td");
+  cells.forEach((cell) => {
+    cell.innerHTML = "";
+  });
+
+  // Reset the current player and hide the restart button
+  currPlayer = 1;
+  switchPlayer();
+  restartBtn.classList.add("hidden");
 }
 
 function switchPlayer() {
