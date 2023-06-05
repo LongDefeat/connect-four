@@ -100,21 +100,25 @@ function restartGame() {
     cell.innerHTML = "";
   });
 
+  // Reset the board array
+  board = [];
+  makeBoard();
+
   // Reset the current player and hide the restart button
   currPlayer = 1;
-  switchPlayer();
   restartBtn.classList.add("hidden");
+
+  // Update the player box
+  switchPlayer();
 }
 
 function switchPlayer() {
-  let soonToBeCurrPlayer = currPlayer === 1 ? 2 : 1;
+  currPlayer = currPlayer === 1 ? 2 : 1;
   let playerText = document.querySelector(".curr-player");
-  playerText.querySelector(".curr-player-number").textContent =
-    soonToBeCurrPlayer;
+  playerText.querySelector(".curr-player-number").textContent = currPlayer;
   playerText.classList.remove(`player-1`);
   playerText.classList.remove(`player-2`);
-  playerText.classList.add(`player-${soonToBeCurrPlayer}`);
-  currPlayer = soonToBeCurrPlayer;
+  playerText.classList.add(`player-${currPlayer}`);
 }
 
 function handleClick(evt) {

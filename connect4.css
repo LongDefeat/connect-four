@@ -74,6 +74,10 @@ body {
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
 }
+
+.hidden {
+  display: none;
+}
 /* column-top is table row of clickable areas for each column */
 
 #column-top td {
